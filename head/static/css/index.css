@@ -1,0 +1,28 @@
+html, body {
+    background: #000000;
+    min-width: 100%;
+    color: #ffffff;
+    min-height: 100%;
+    position: relative;
+}
+
+.jumbotron {
+    min-height: 100%;
+    background-color: #000000;
+    margin-bottom: 0;
+}
+
+.wrapper {
+    height: calc(100vh);
+    padding-bottom: calc(40vh);
+}
+
+canvas {
+    position: absolute;
+    bottom: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}

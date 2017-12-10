@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col"><p class="text-center"><a href="{% url 'help' %}">Помощь</a></p></div>
+                <div class="col"><p class="text-center"><a href="{% url 'about' %}" class="text-center">О проекте</a>
+                </p>
+                </div>
+                <div class="col"><p class="text-center"><a href="{% url 'travellers' %}"
+                                                           class="text-center">Путешественники</a></p></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron">
+                        <h1 class="display-3">Shlak</h1>
+                        <p class="lead">{{ random_phrase }}</p>
+                        <p class="lead">
+                            <button type="button" class="btn btn-light"><a href="#">Нажми на меня!</a></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer navbar-fixed-bottom">
+            <div id="waves"></div>
+        </footer>
+    </div>
+{% endblock %}
+{% block static_css %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+{% block static_js %}
+    <script src="{% static 'js/threejs/three.min.js' %}"></script>
+    <script src="{% static "js/simplex.js" %}"></script>
+    <script src="{% static "js/index_waves.js" %}"></script>
+{% endblock %}
