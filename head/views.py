@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import random
 
+start_views = [
+    'idea',
+    'fears',
+]
 
-# Create your views here.
+
 def helps(request):
     return render(request, 'head/help.html')
 
@@ -24,3 +28,26 @@ def index(request):
 def travellers(request):
     return render(request, 'head/travellers.html')
 
+
+def start_trip(request):
+    return redirect(random.choice(start_views))
+
+
+def next_url(request):
+    return redirect(random.choice(start_views))
+
+
+################################
+#          Trip urls
+################################
+def fears(request):
+    fears_templates = [
+        'fears/poverty.html',
+        'fears/death.html',
+        'fears/betrayal.html'
+    ]
+    return render(request, random.choice(fears_templates))
+
+
+def idea(request):
+    return render(request, 'small/idea.html')

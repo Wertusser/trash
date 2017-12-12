@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <header class="page-header" id="top-secret-text">
+            <h1>Идеи - то, чего ты так сильно <a href="{% url 'fears' %}">боишься?</a></h1>
+        </header>
+        <div class="content">
+            <canvas id="scene"></canvas>
+        </div>
+    </main>
+{% endblock %}
+
+{% block static_js %}
+    <script src="{% static "js/threejs/three.min.js" %}"></script>
+    <script src="{% static "js/tunnel.js" %}"></script>
+{% endblock %}
+
+{% block static_css %}
+    <link href="{% static 'css/idea.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+{% endblock %}
