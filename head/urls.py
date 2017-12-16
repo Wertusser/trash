@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from head import views
 
 general_urls = [
     path('', views.index, name='index'),
@@ -14,7 +14,6 @@ general_urls = [
 projects = [
     path('idea/', views.idea, name='idea'),
     path('fear/', views.fears, name='fears'),
-
 ]
 
 urlpatterns = general_urls + projects

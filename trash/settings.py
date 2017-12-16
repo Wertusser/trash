@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'head.apps.HeadConfig',
+    'mom_lovers.apps.MomLoversConfig'
 ]
 
 MIDDLEWARE = [
