@@ -2,6 +2,8 @@ from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
+app_name = 'mom_lovers'
+
 urlpatterns = [
     path('', views.IndexView.as_view(), name='mom_lovers'),
     path('<int:pk>/', views.ThreadView.as_view(), name='mom_lovers_thread'),

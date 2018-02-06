@@ -1,6 +1,6 @@
-{% extends 'layout.html' %}
-{% block content %}
-    <div class="content">
+{% extends 'mom_lovers/layout_mom_lovers.html' %}
+{% block mom_content %}
+    <div class="container">
         {% for post in posts %}
             <div class="row">
                 <div class="col">
@@ -14,49 +14,12 @@
         <div class="row">
             <div class="col-xs-1 col-sm-1 col-md-4"></div>
             <div class="col-xs-10 col-sm-10 col-md-4">
-                <form class="post_form" action='{% url 'mom_lovers_thread_posts_list' pk=thread.id %}' method="post">
-                    <div class="form-group">
-                        <label class="col-form-label" for="formAuthor">Author</label>
-                        <input type="text" class="form-control" id="formAuthor" name="username"
-                               placeholder="Необязательно">
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="formLead">Title</label>
-                        <input type="text" class="form-control" id="formLead" name="title" placeholder="Необязательно">
-                    </div>
-                    <div class="form-group">
-                        <label for="formMessage">Message</label>
-                        <textarea class="form-control" id="formMessage" name="lead" rows="3"></textarea>
-                    </div>
-                    <input type="hidden" name="thread_id" value="{{ thread.id }}">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <form class="thread_form" action='{% url 'mom_lovers:mom_lovers_thread_posts_list' pk=thread.id %}' method="post">
+                    {% include 'mom_lovers/form.html' %}
                 </form>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-4"></div>
         </div>
     </div>
-
-{% endblock %}
-{% block static_js %}
-    <script>
-        $(".post_form").on('submit', function (event) {
-            event.preventDefault();
-            $.ajax({
-                url: $(this).attr('action'),
-                method: $(this).attr('method'),
-                data: $(this).serializeArray(),
-                success: function (data) {
-                    console.log("success");
-                    console.log(data);
-                },
-                error: function (data) {
-                    console.log("error");
-                    console.log(data);
-                }
-            })
-        });
-    </script>
-{% endblock %}
-{% block static_css %}
 
 {% endblock %}

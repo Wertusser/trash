@@ -3,7 +3,9 @@ import random
 
 start_views = [
     'idea',
+    'music',
     'fears',
+    'mom_lovers:mom_lovers',
 ]
 
 
@@ -21,6 +23,7 @@ def index(request):
         'Тебе это точно не пригодится в жизни.',
         'Привет мир!',
         'Как прошел твой день?',
+        'Ничего не делаем зря'
     ]
     return render(request, 'head/index.html', context={'random_phrase': random.choice(random_phrases)})
 
@@ -51,3 +54,7 @@ def fears(request):
 
 def idea(request):
     return render(request, 'small/idea.html')
+
+
+def music(request):
+    return render(request, 'small/music.html')

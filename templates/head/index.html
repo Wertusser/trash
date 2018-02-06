@@ -4,11 +4,11 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="col"><p class="text-center"><a href="{% url 'help' %}">Помощь</a></p></div>
-                <div class="col"><p class="text-center"><a href="{% url 'about' %}" class="text-center">О проекте</a>
+                <div class="col"><p class="text-center"><a href="{% url 'head:help' %}">Помощь</a></p></div>
+                <div class="col"><p class="text-center"><a href="{% url 'head:about' %}" class="text-center">О проекте</a>
                 </p>
                 </div>
-                <div class="col"><p class="text-center"><a href="{% url 'travellers' %}"
+                <div class="col"><p class="text-center"><a href="{% url 'head:travellers' %}"
                                                            class="text-center">Путешественники</a></p></div>
             </div>
             <div class="row">
@@ -17,7 +17,7 @@
                         <h1 class="display-3">Shlak</h1>
                         <p class="lead">{{ random_phrase }}</p>
                         <p class="lead">
-                            <button type="button" class="btn btn-light"><a href="{% url 'start_trip' %}">Нажми на
+                            <button type="button" class="btn btn-light"><a href="{% url 'head:start_trip' %}">Нажми на
                                 меня!</a></button>
                         </p>
                     </div>
@@ -31,6 +31,7 @@
 {% endblock %}
 {% block static_css %}
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
 {% endblock %}
 {% block static_js %}
     <script src="{% static 'js/threejs/three.min.js' %}"></script>

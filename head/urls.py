@@ -2,6 +2,8 @@ from django.urls import path
 
 from head import views
 
+app_name = 'head'
+
 general_urls = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
@@ -14,6 +16,7 @@ general_urls = [
 projects = [
     path('idea/', views.idea, name='idea'),
     path('fear/', views.fears, name='fears'),
+    path('music/', views.music, name='music')
 ]
 
 urlpatterns = general_urls + projects

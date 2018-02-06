@@ -1,0 +1,9 @@
+body, html{
+    padding: 0;
+    margin: 0;
+}
+
+#mistery {
+    height: 100vh;
+    overflow: hidden;
+}

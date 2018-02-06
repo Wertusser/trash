@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div id="mistery"></div>
+{% endblock %}
+{% block static_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/0.12.52/Tone.min.js"></script>
+    <script src="{% static "js/simplex.js" %}"></script>
+    <script src="{% static "js/music.js" %}"></script>
+    <script src="{% static "js/mistery.js" %}"></script>
+{% endblock %}
+{% block static_css %}
+    <link rel="stylesheet" href="{% static "css/music.css" %}">
+{% endblock %}
